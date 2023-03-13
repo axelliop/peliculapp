@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import styles from "./MovieCard.module.css";
 
@@ -10,6 +11,7 @@ const MovieCard = ({ movie }) => {
   return (
     //----- TODO DENTRO DEL LI YA QUE ESO ES LO QUE ME MAPEA
     <li className={styles.moviecard}>
+        <Link to={'/movies/' + movie.id}> {/* LO COLOCO CON SU ID, ESTA LINKEADO TODA LA CARD PARA QUE CUANDO LA APRETE ME LLEVE A LA PAG DE DETAILS */}
       <img
         width={230}
         height={345}
@@ -19,7 +21,9 @@ const MovieCard = ({ movie }) => {
       />
       {/* LO METRO DENTRO DE UN DIV PARA QUE ME APAREZCA EN LA SIG. LINEA */}
       <div>{movie.title}</div>
+      </Link>
     </li>
+    
   );
 };
 
